@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:basic_recipe_app/foodWidget.dart';
 
 void main() {
   runApp(const HomePage());
@@ -23,13 +24,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> foodList = [];
     for (var food in foods) {
       foodList.add(
-        ListTile(
-          leading: CircleAvatar(
-            backgroundImage: AssetImage('images/${food}.png'),
-          ),
-          title: Text(food),
-          trailing: Icon(Icons.arrow_forward_ios),
-        ),
+        foodWidget(food: food),
       );
     }
     return foodList;
