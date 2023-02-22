@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
             backgroundImage: AssetImage('images/${food}.png'),
           ),
           title: Text(food),
+          trailing: Icon(Icons.arrow_forward_ios),
         ),
       );
     }
@@ -43,15 +44,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView(children: getFood(foods)
-            // ListTile(
-            //   leading: CircleAvatar(
-            //     backgroundImage: AssetImage('images/Chicken.png'),
-            //   ),
-            //   title: Text('Chicken'),
-            // ),
-
-            ),
+        child: ListView(children: getFood(foods)),
       ),
     ));
   }
