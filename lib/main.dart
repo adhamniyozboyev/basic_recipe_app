@@ -27,6 +27,12 @@ class _HomePageState extends State<HomePage> {
               backgroundImage: AssetImage('images/Chicken.png'),
             ),
             title: Text('Chicken'),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage('images/Pizza.png'),
+            ),
+            title: Text('Pizza'),
           )
         ]),
       ),
