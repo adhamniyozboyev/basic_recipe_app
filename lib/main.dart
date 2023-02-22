@@ -12,6 +12,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List foods = [
+    'Chicken',
+    'Pizza',
+    'Burger',
+    'Somsa',
+    'Lagmon',
+  ];
+  List<Widget> getFood(foods) {
+    List<Widget> foodList = [];
+    for (var food in foods) {
+      foodList.add(
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: AssetImage('images/${food}.png'),
+          ),
+          title: Text(food),
+        ),
+      );
+    }
+    return foodList;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,20 +43,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView(children: [
-          ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/Chicken.png'),
+        child: ListView(children: getFood(foods)
+            // ListTile(
+            //   leading: CircleAvatar(
+            //     backgroundImage: AssetImage('images/Chicken.png'),
+            //   ),
+            //   title: Text('Chicken'),
+            // ),
+
             ),
-            title: Text('Chicken'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/Pizza.png'),
-            ),
-            title: Text('Pizza'),
-          )
-        ]),
       ),
     ));
   }
