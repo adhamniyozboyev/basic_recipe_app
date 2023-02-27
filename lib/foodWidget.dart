@@ -1,5 +1,27 @@
 import 'package:flutter/material.dart';
 
+Map data = {
+  'Chicken': '20 min',
+  'Pizza': '15 min',
+  'Lagmon': '10 min',
+  'Burger': '7 min',
+  'Somsa': '30 min',
+};
+Map star = {
+  'Chicken': '3.2',
+  'Pizza': '3.0',
+  'Lagmon': '3.5',
+  'Burger': '4',
+  'Somsa': '5.0',
+};
+Map ckal = {
+  'Chicken': '200',
+  'Pizza': '300',
+  'Lagmon': '350',
+  'Burger': '180',
+  'Somsa': '500',
+};
+
 class foodWidget extends StatelessWidget {
   final String food;
   const foodWidget({
@@ -27,7 +49,7 @@ class foodWidget extends StatelessWidget {
             color: Colors.grey[300],
           ),
           Text(
-            '20 min',
+            data[food],
             style: TextStyle(
               color: Colors.grey[400],
             ),
@@ -37,7 +59,7 @@ class foodWidget extends StatelessWidget {
             size: 20,
             color: Colors.yellow[700],
           ),
-          Text('5.0',
+          Text(star[food],
               style: TextStyle(
                 color: Colors.yellow[700],
               )),
@@ -46,7 +68,7 @@ class foodWidget extends StatelessWidget {
             size: 20,
             color: Colors.red[300],
           ),
-          Text('200 cal',
+          Text(ckal[food],
               style: TextStyle(
                 color: Colors.red[300],
               )),
